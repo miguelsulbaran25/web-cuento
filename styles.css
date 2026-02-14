@@ -160,10 +160,6 @@ button:hover {
   z-index: 2;
 }
 
-.cover-back {
-  transform: rotateY(180deg);
-  color: #000000; /* ← cambia este color por el que quieras */
-}
 
 .sheet .front,
 .sheet .back,
@@ -187,7 +183,7 @@ overflow-y: auto;
   align-items: center;
 
   padding: clamp(25px, 4vw, 50px);
-  font-size: clamp(0.9rem, 1.2vw, 1rem);
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
   font-family: "Georgia", serif;
   text-align: center;
   line-height: 1.6;
@@ -243,7 +239,14 @@ overflow-y: auto;
 
 .sheet .back {
   transform: rotateY(180deg);
+
 }
+
+.cover-back {
+  transform: rotateY(180deg);
+  color: #000000; /* ← cambia este color por el que quieras */
+}
+
 
 .page.flipped {
   transform: rotateY(-180deg) translateZ(2px);
@@ -252,16 +255,25 @@ overflow-y: auto;
 
 
 @media (max-width: 600px) {
-  .sheet .front,
-  .sheet .back {
-    padding: 25px;
-    font-size: 0.95rem;
+  .book {
+    width: 85vw;
+    aspect-ratio: 8/5;
+    height: auto;
+  }
+
+   .sheet .front,
+  .sheet .back,
+  .cover-front,
+  .cover-back {
+    font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+    padding: clamp(15px, 3vh, 30px);
   }
 
   .cover-front {
     font-size: 1.3rem;
   }
 }
+
 @media (max-width: 600px) {
   .book {
     width: 85vw;
